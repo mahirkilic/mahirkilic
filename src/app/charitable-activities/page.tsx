@@ -23,13 +23,13 @@ export default function CharitableActivitiesPage() {
             {"subtitle" in section && section.subtitle ? (
               <p className="mt-2 text-sm text-soft">{section.subtitle}</p>
             ) : null}
-            <div className="mt-3 max-w-3xl space-y-4 text-base leading-relaxed text-muted">
+            <div className="mt-3 space-y-4 text-base leading-relaxed text-muted">
               {section.paragraphs.map((p) => (
                 <p key={p.slice(0, 48)}>{p}</p>
               ))}
             </div>
             {"aims" in section && section.aims ? (
-              <div className="mt-3 max-w-3xl">
+              <div className="mt-3">
                 <p className="font-semibold text-ink">{section.aimsTitle}</p>
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-muted">
                   {section.aims.map((a) => (
@@ -39,7 +39,7 @@ export default function CharitableActivitiesPage() {
               </div>
             ) : null}
             {"presentations" in section && section.presentations ? (
-              <div className="mt-3 max-w-3xl">
+              <div className="mt-3">
                 <p className="font-semibold text-ink">{section.presentationsTitle}</p>
                 <p className="mt-2 text-muted">{section.presentationsIntro}</p>
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-muted">

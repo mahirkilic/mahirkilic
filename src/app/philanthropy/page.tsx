@@ -23,13 +23,13 @@ export default function PhilanthropyPage() {
             <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem] text-ink">
               {section.title}
             </h2>
-            <div className="mt-3 max-w-3xl space-y-4 text-base leading-relaxed text-muted">
+            <div className="mt-3 space-y-4 text-base leading-relaxed text-muted">
               {section.paragraphs.map((p) => (
                 <p key={p.slice(0, 40)}>{p}</p>
               ))}
             </div>
             {"bullets" in section && section.bullets ? (
-              <div className="mt-3 max-w-3xl">
+              <div className="mt-3">
                 <p className="text-sm font-semibold text-ink">{section.bulletsTitle}</p>
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-muted">
                   {section.bullets.map((b) => (

@@ -43,7 +43,7 @@ export default function FreemasonryPage() {
           <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem]">
             {freemasonry.supreme.title}
           </h2>
-          <p className="mt-2 max-w-3xl text-sm text-muted">{freemasonry.supreme.subtitle}</p>
+          <p className="mt-2 text-sm text-muted">{freemasonry.supreme.subtitle}</p>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-muted">
             {freemasonry.supreme.items.map((item) => (
               <li key={item}>{item}</li>
@@ -67,7 +67,7 @@ export default function FreemasonryPage() {
           <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem]">
             {freemasonry.mark.title}
           </h2>
-          <div className="mt-4 max-w-3xl space-y-3 text-muted">
+          <div className="mt-4 space-y-3 text-muted">
             {freemasonry.mark.summary.map((p) => (
               <p key={p.slice(0, 40)}>{p}</p>
             ))}
@@ -87,7 +87,7 @@ export default function FreemasonryPage() {
           <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem]">
             {freemasonry.ram.title}
           </h2>
-          <div className="mt-4 max-w-3xl space-y-3 text-muted">
+          <div className="mt-4 space-y-3 text-muted">
             {freemasonry.ram.summary.map((p) => (
               <p key={p.slice(0, 40)}>{p}</p>
             ))}

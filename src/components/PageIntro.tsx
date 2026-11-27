@@ -13,7 +13,7 @@ export function PageIntro({
           {title}
         </h1>
         {children ? (
-          <div className="fade-up-delay-2 mt-3 max-w-3xl text-base leading-relaxed text-muted">
+          <div className="fade-up-delay-2 mt-3 text-base leading-relaxed text-muted">
             {children}
           </div>
         ) : null}
