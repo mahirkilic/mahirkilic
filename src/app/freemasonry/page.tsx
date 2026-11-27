@@ -18,108 +18,101 @@ export default function FreemasonryPage() {
         </ul>
       </PageIntro>
 
-      <div className="site-shell space-y-8 py-6 md:py-8">
-        <section>
-          <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem]">
-            {freemasonry.craft.title}
-          </h2>
-          <p className="mt-2 text-sm text-soft">{freemasonry.craft.currentTitle}</p>
-          <div className="mt-4 grid gap-x-8 gap-y-4 md:grid-cols-2 lg:grid-cols-3">
-            {freemasonry.craft.lodges.map((lodge) => (
-              <article key={lodge.name}>
-                <h3 className="text-lg font-semibold text-ink">{lodge.name}</h3>
-                <p className="text-sm text-soft">{lodge.note}</p>
-                <ul className="mt-1.5 space-y-0.5 text-sm text-muted">
-                  {lodge.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+      <div className="site-shell py-6 md:py-8">
+        <Section title={freemasonry.craft.title} note={freemasonry.craft.currentTitle}>
+          <CardGrid
+            cards={freemasonry.craft.lodges.map((lodge) => ({
+              title: lodge.name,
+              note: lodge.note,
+              items: lodge.items,
+            }))}
+          />
+        </Section>
+
+        <Section title={freemasonry.supreme.title} note={freemasonry.supreme.subtitle}>
+          <Rows rows={freemasonry.supreme.items.map((item) => ({ text: item }))} />
+        </Section>
+
+        <Section title="Progressive Orders">
+          <h3 className="text-sm font-semibold text-ink">{freemasonry.promotions.title}</h3>
+          <Rows rows={freemasonry.promotions.items.map((item) => ({ text: item }))} />
+          <div className="mt-6">
+            <CardGrid
+              cards={freemasonry.otherOrders.map((order) => ({
+                title: order.title,
+                items: order.items,
+              }))}
+            />
           </div>
-        </section>
+        </Section>
 
-        <div className="grid gap-8 md:grid-cols-2">
-          <section>
-            <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem]">
-              {freemasonry.supreme.title}
-            </h2>
-            <p className="mt-2 text-sm text-muted">{freemasonry.supreme.subtitle}</p>
-            <ul className="mt-4 list-disc space-y-1 pl-5 text-muted">
-              {freemasonry.supreme.items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem]">
-              Progressive Orders
-            </h2>
-            <h3 className="mt-2 text-lg font-semibold">{freemasonry.promotions.title}</h3>
-            <ul className="mt-3 list-disc space-y-1 pl-5 text-muted">
-              {freemasonry.promotions.items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-2">
-          <section>
-            <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem]">
-              {freemasonry.mark.title}
-            </h2>
-            <div className="mt-3 space-y-2 text-muted">
-              {freemasonry.mark.summary.map((p) => (
+        {[freemasonry.mark, freemasonry.ram].map((order) => (
+          <Section key={order.title} title={order.title}>
+            <div className="space-y-2 text-sm leading-relaxed text-muted">
+              {order.summary.map((p) => (
                 <p key={p.slice(0, 40)}>{p}</p>
               ))}
             </div>
-            <ol className="ml-[3.5px] mt-4 space-y-1.5 border-l border-line pl-5">
-              {freemasonry.mark.timeline.map((item) => (
-                <li key={item.role} className="relative">
-                  <span className="absolute -left-[24.5px] top-1.5 h-2 w-2 rounded-full bg-ink" />
-                  <p className="font-medium text-ink">{item.role}</p>
-                  <p className="text-sm text-soft">{item.date}</p>
-                </li>
-              ))}
-            </ol>
-          </section>
-
-          <section>
-            <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem]">
-              {freemasonry.ram.title}
-            </h2>
-            <div className="mt-3 space-y-2 text-muted">
-              {freemasonry.ram.summary.map((p) => (
-                <p key={p.slice(0, 40)}>{p}</p>
-              ))}
-            </div>
-            <ol className="ml-[3.5px] mt-4 space-y-1.5 border-l border-line pl-5">
-              {freemasonry.ram.timeline.map((item) => (
-                <li key={item.role} className="relative">
-                  <span className="absolute -left-[24.5px] top-1.5 h-2 w-2 rounded-full bg-ink" />
-                  <p className="font-medium text-ink">{item.role}</p>
-                  <p className="text-sm text-soft">{item.date}</p>
-                </li>
-              ))}
-            </ol>
-          </section>
-        </div>
-
-        <section className="grid gap-x-8 gap-y-5 md:grid-cols-2 lg:grid-cols-3">
-          {freemasonry.otherOrders.map((order) => (
-            <article key={order.title}>
-              <h3 className="text-lg font-semibold text-ink">{order.title}</h3>
-              <ul className="mt-1.5 space-y-1 text-sm text-muted">
-                {order.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </section>
+            <Rows rows={order.timeline.map((item) => ({ text: item.role, date: item.date }))} />
+          </Section>
+        ))}
       </div>
     </>
+  );
+}
+
+/** One block of the page: title on the left, content on the right, a rule above. */
+function Section({
+  title,
+  note,
+  children,
+}: {
+  title: string;
+  note?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="grid gap-3 border-t border-line py-6 first:border-t-0 first:pt-0 last:pb-0 lg:grid-cols-[16rem_1fr] lg:gap-10">
+      <div>
+        <h2 className="font-[family-name:var(--font-display)] text-2xl leading-tight tracking-tight text-ink">
+          {title}
+        </h2>
+        {note ? <p className="mt-1 text-sm text-soft">{note}</p> : null}
+      </div>
+      <div>{children}</div>
+    </section>
+  );
+}
+
+/** A list of entries, one per line, with the date pushed to the right. */
+function Rows({ rows }: { rows: { text: string; date?: string }[] }) {
+  return (
+    <ul className="mt-3 divide-y divide-line border-y border-line text-sm first:mt-0">
+      {rows.map((row) => (
+        <li key={row.text} className="flex flex-col gap-0.5 py-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+          <span className="text-ink">{row.text}</span>
+          {row.date ? <span className="shrink-0 text-soft">{row.date}</span> : null}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** Lodges and orders as small cards in a grid. */
+function CardGrid({ cards }: { cards: { title: string; note?: string; items: string[] }[] }) {
+  return (
+    <div className="grid gap-x-8 gap-y-5 sm:grid-cols-2 xl:grid-cols-3">
+      {cards.map((card) => (
+        <article key={card.title}>
+          <h3 className="text-[0.95rem] font-semibold text-ink">{card.title}</h3>
+          {card.note ? <p className="text-xs text-soft">{card.note}</p> : null}
+          <ul className="mt-1.5 space-y-0.5 text-sm text-muted">
+            {card.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
   );
 }
