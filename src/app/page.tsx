@@ -52,13 +52,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="pb-20 pt-14 md:pb-24 md:pt-16">
-        <div className="site-shell grid gap-12 md:grid-cols-2 md:gap-16">
-          <div>
-            <h2 className="text-xl font-semibold tracking-tight text-ink md:text-2xl">
-              {home.breakdownTitle}
-            </h2>
-            <ul className="mt-8 space-y-4">
+      <section className="py-10 md:py-12">
+        <div className="site-shell">
+          <h2 className="text-xl font-semibold tracking-tight text-ink md:text-2xl">
+            {home.breakdownTitle}
+          </h2>
+          {/* Bars and roles share one row so the roles start level with the
+              first bar and end level with the last one. */}
+          <div className="mt-6 grid gap-10 md:grid-cols-2 md:gap-16">
+            <ul className="space-y-4">
               {home.breakdown.map((item) => (
                 <li key={item.label}>
                   <div className="relative h-10 overflow-hidden bg-bar text-sm">
@@ -74,15 +76,15 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
-          </div>
 
-          <div className="grid gap-8 sm:grid-cols-2">
-            {home.roles.map((role) => (
-              <div key={role.title}>
-                <h3 className="text-base font-semibold leading-snug text-muted">{role.title}</h3>
-                <p className="mt-1 text-sm text-soft">{role.dates}</p>
-              </div>
-            ))}
+            <div className="grid gap-8 sm:grid-cols-2 md:content-between md:gap-y-4">
+              {home.roles.map((role) => (
+                <div key={role.title}>
+                  <h3 className="text-base font-semibold leading-snug text-muted">{role.title}</h3>
+                  <p className="mt-1 text-sm leading-none text-soft">{role.dates}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
