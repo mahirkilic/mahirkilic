@@ -12,9 +12,9 @@ export default function FinancialReportPage() {
       <PageIntro title="Financial Report">
         <p>Selected charitable contributions and humanitarian distributions.</p>
       </PageIntro>
-      <div className="site-shell space-y-12 py-14 md:py-20">
+      <div className="site-shell space-y-10 py-10 md:py-12">
         {financial.periods.map((period) => (
-          <section key={period.title} className="border-t border-line pt-10 first:border-t-0 first:pt-0">
+          <section key={period.title} className="border-t border-line pt-8 first:border-t-0 first:pt-0">
             <h2 className="font-[family-name:var(--font-display)] text-3xl tracking-tight text-ink">
               {period.title}
             </h2>

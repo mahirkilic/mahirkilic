@@ -18,7 +18,7 @@ export default function ContactPage() {
         ))}
       </PageIntro>
 
-      <div className="site-shell grid gap-12 py-14 md:grid-cols-[0.9fr_1.1fr] md:py-20">
+      <div className="site-shell grid gap-12 py-10 md:grid-cols-[0.9fr_1.1fr] md:py-12">
         <div>
           <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight">
             Get in touch

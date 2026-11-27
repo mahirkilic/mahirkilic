@@ -14,7 +14,7 @@ export default function PhilanthropyPage() {
         <p className="mt-4">{philanthropy.definition}</p>
       </PageIntro>
 
-      <div className="site-shell space-y-16 py-14 md:py-20">
+      <div className="site-shell space-y-12 py-10 md:py-12">
         {philanthropy.sections.map((section) => (
           <section key={section.id} id={section.id} className="scroll-mt-24">
             {"eyebrow" in section && section.eyebrow ? (

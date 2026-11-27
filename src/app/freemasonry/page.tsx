@@ -18,7 +18,7 @@ export default function FreemasonryPage() {
         </ul>
       </PageIntro>
 
-      <div className="site-shell space-y-16 py-14 md:py-20">
+      <div className="site-shell space-y-12 py-10 md:py-12">
         <section>
           <h2 className="font-[family-name:var(--font-display)] text-3xl tracking-tight">
             {freemasonry.craft.title}

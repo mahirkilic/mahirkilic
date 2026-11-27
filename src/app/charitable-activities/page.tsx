@@ -14,9 +14,9 @@ export default function CharitableActivitiesPage() {
         <p className="mt-4">{charitable.current}</p>
       </PageIntro>
 
-      <div className="site-shell space-y-16 py-14 md:py-20">
+      <div className="site-shell space-y-12 py-10 md:py-12">
         {charitable.sections.map((section) => (
-          <section key={section.id} id={section.id} className="scroll-mt-24 border-t border-line pt-12 first:border-t-0 first:pt-0">
+          <section key={section.id} id={section.id} className="scroll-mt-24 border-t border-line pt-10 first:border-t-0 first:pt-0">
             <h2 className="font-[family-name:var(--font-display)] text-3xl tracking-tight text-ink">
               {section.title}
             </h2>

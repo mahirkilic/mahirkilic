@@ -7,7 +7,7 @@ export function PageIntro({
 }) {
   return (
     <section className="border-b border-line bg-paper">
-      <div className="site-shell py-14 md:py-16">
+      <div className="site-shell py-10 md:py-12">
         <p className="fade-up text-xs uppercase tracking-[0.22em] text-soft">Mahir Kılıç</p>
         <h1 className="fade-up-delay mt-3 font-[family-name:var(--font-display)] text-4xl leading-tight tracking-tight text-ink md:text-5xl">
           {title}
