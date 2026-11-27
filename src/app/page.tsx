@@ -67,7 +67,7 @@ export default function HomePage() {
                       style={{ width: `${item.percent}%` }}
                     />
                     <div className="relative z-10 flex h-full items-center justify-between px-3 font-medium text-ink">
-                      <span>{item.label}</span>
+                      <span className="text-white">{item.label}</span>
                       <span>{item.percent}%</span>
                     </div>
                   </div>
