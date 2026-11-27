@@ -1,0 +1,6 @@
+:HL["/_next/static/media/692df4da22e71021-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/cccb76cee38030ea-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/daaefb8e1392e3d3.css","style"]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"philanthropy","h":96,"c":"$Q2"}]]
+0:{"b":"ZT35VHIwgJLZdgkrJj1Qb","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
