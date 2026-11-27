@@ -14,22 +14,22 @@ export default function CharitableActivitiesPage() {
         <p className="mt-4">{charitable.current}</p>
       </PageIntro>
 
-      <div className="site-shell space-y-12 py-10 md:py-12">
+      <div className="site-shell space-y-8 py-6 md:py-8">
         {charitable.sections.map((section) => (
-          <section key={section.id} id={section.id} className="scroll-mt-24 border-t border-line pt-10 first:border-t-0 first:pt-0">
-            <h2 className="font-[family-name:var(--font-display)] text-3xl tracking-tight text-ink">
+          <section key={section.id} id={section.id} className="scroll-mt-24 border-t border-line pt-6 first:border-t-0 first:pt-0">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem] text-ink">
               {section.title}
             </h2>
             {"subtitle" in section && section.subtitle ? (
               <p className="mt-2 text-sm text-soft">{section.subtitle}</p>
             ) : null}
-            <div className="mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-muted">
+            <div className="mt-3 max-w-3xl space-y-4 text-base leading-relaxed text-muted">
               {section.paragraphs.map((p) => (
                 <p key={p.slice(0, 48)}>{p}</p>
               ))}
             </div>
             {"aims" in section && section.aims ? (
-              <div className="mt-6 max-w-3xl">
+              <div className="mt-3 max-w-3xl">
                 <p className="font-semibold text-ink">{section.aimsTitle}</p>
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-muted">
                   {section.aims.map((a) => (
@@ -39,7 +39,7 @@ export default function CharitableActivitiesPage() {
               </div>
             ) : null}
             {"presentations" in section && section.presentations ? (
-              <div className="mt-6 max-w-3xl">
+              <div className="mt-3 max-w-3xl">
                 <p className="font-semibold text-ink">{section.presentationsTitle}</p>
                 <p className="mt-2 text-muted">{section.presentationsIntro}</p>
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-muted">
@@ -51,7 +51,7 @@ export default function CharitableActivitiesPage() {
               </div>
             ) : null}
             {"link" in section && section.link ? (
-              <p className="mt-6">
+              <p className="mt-3">
                 <a
                   href={section.link.href}
                   target="_blank"

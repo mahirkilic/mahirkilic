@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-line bg-paper">
-      <div className="site-shell grid gap-6 py-8 md:grid-cols-2 md:py-10">
+      <div className="site-shell grid gap-4 py-6 md:grid-cols-2 md:py-8">
         <div>
           <p className="font-[family-name:var(--font-display)] text-2xl tracking-tight text-ink">
             Contact Me
@@ -28,7 +28,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-line/80">
-        <div className="site-shell flex flex-wrap items-center justify-between gap-3 py-4 text-xs text-soft">
+        <div className="site-shell flex flex-wrap items-center justify-between gap-3 py-3 text-xs text-soft">
           <p>© {new Date().getFullYear()} {site.name}</p>
           <p>{site.tagline}</p>
         </div>

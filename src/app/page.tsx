@@ -28,7 +28,7 @@ export default function HomePage() {
       </section>
 
       <section className="border-b border-line">
-        <div className="site-shell grid gap-10 py-10 md:grid-cols-[1fr_auto_1fr] md:gap-12 md:py-12">
+        <div className="site-shell grid gap-8 py-8 md:grid-cols-[1fr_auto_1fr] md:gap-12 md:py-10">
           {home.quotes.map((quote, index) => (
             <div key={quote.attribution} className="contents">
               {index === 1 ? <div className="quote-rule hidden md:block" aria-hidden /> : null}
@@ -39,7 +39,7 @@ export default function HomePage() {
                 className={`fade-up ${index === 1 ? "fade-up-delay md:text-right" : "md:text-left"} text-center`}
               >
                 <div
-                  className={`mx-auto mb-6 h-56 w-44 overflow-hidden md:h-64 md:w-48 ${
+                  className={`mx-auto mb-4 h-56 w-44 overflow-hidden md:h-64 md:w-48 ${
                     index === 1 ? "md:mr-0" : "md:ml-0"
                   }`}
                 >
@@ -67,7 +67,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-8 md:py-10">
+      <section className="py-6 md:py-8">
         <div className="site-shell">
           <h2 className="text-xl font-semibold tracking-tight text-ink md:text-2xl">
             {home.breakdownTitle}

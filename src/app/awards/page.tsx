@@ -10,12 +10,12 @@ export default function AwardsPage() {
   return (
     <>
       <PageIntro title={awards.title} />
-      <div className="site-shell py-10 md:py-12">
-        <ul className="space-y-8">
+      <div className="site-shell py-6 md:py-8">
+        <ul className="space-y-4">
           {awards.items.map((item) => (
-            <li key={item.title} className="border-b border-line pb-6">
+            <li key={item.title} className="border-b border-line pb-4">
               <p className="text-xs uppercase tracking-[0.18em] text-soft">{item.date}</p>
-              <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl tracking-tight text-ink md:text-3xl">
+              <h2 className="mt-1 font-[family-name:var(--font-display)] text-xl tracking-tight text-ink md:text-2xl">
                 {item.title}
               </h2>
             </li>

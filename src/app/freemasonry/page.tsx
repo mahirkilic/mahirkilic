@@ -18,13 +18,13 @@ export default function FreemasonryPage() {
         </ul>
       </PageIntro>
 
-      <div className="site-shell space-y-12 py-10 md:py-12">
+      <div className="site-shell space-y-8 py-6 md:py-8">
         <section>
-          <h2 className="font-[family-name:var(--font-display)] text-3xl tracking-tight">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem]">
             {freemasonry.craft.title}
           </h2>
           <p className="mt-2 text-sm text-soft">{freemasonry.craft.currentTitle}</p>
-          <div className="mt-8 grid gap-8 md:grid-cols-2">
+          <div className="mt-4 grid gap-x-8 gap-y-5 md:grid-cols-2">
             {freemasonry.craft.lodges.map((lodge) => (
               <article key={lodge.name}>
                 <h3 className="text-lg font-semibold text-ink">{lodge.name}</h3>
@@ -40,7 +40,7 @@ export default function FreemasonryPage() {
         </section>
 
         <section>
-          <h2 className="font-[family-name:var(--font-display)] text-3xl tracking-tight">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem]">
             {freemasonry.supreme.title}
           </h2>
           <p className="mt-2 max-w-3xl text-sm text-muted">{freemasonry.supreme.subtitle}</p>
@@ -52,10 +52,10 @@ export default function FreemasonryPage() {
         </section>
 
         <section>
-          <h2 className="font-[family-name:var(--font-display)] text-3xl tracking-tight">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem]">
             Progressive Orders
           </h2>
-          <h3 className="mt-6 text-xl font-semibold">{freemasonry.promotions.title}</h3>
+          <h3 className="mt-3 text-lg font-semibold">{freemasonry.promotions.title}</h3>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-muted">
             {freemasonry.promotions.items.map((item) => (
               <li key={item}>{item}</li>
@@ -64,7 +64,7 @@ export default function FreemasonryPage() {
         </section>
 
         <section>
-          <h2 className="font-[family-name:var(--font-display)] text-3xl tracking-tight">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem]">
             {freemasonry.mark.title}
           </h2>
           <div className="mt-4 max-w-3xl space-y-3 text-muted">
@@ -72,7 +72,7 @@ export default function FreemasonryPage() {
               <p key={p.slice(0, 40)}>{p}</p>
             ))}
           </div>
-          <ol className="ml-[3.5px] mt-8 space-y-3 border-l border-line pl-5">
+          <ol className="ml-[3.5px] mt-4 space-y-2 border-l border-line pl-5">
             {freemasonry.mark.timeline.map((item) => (
               <li key={item.role} className="relative">
                 <span className="absolute -left-[24.5px] top-1.5 h-2 w-2 rounded-full bg-ink" />
@@ -84,7 +84,7 @@ export default function FreemasonryPage() {
         </section>
 
         <section>
-          <h2 className="font-[family-name:var(--font-display)] text-3xl tracking-tight">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem]">
             {freemasonry.ram.title}
           </h2>
           <div className="mt-4 max-w-3xl space-y-3 text-muted">
@@ -92,7 +92,7 @@ export default function FreemasonryPage() {
               <p key={p.slice(0, 40)}>{p}</p>
             ))}
           </div>
-          <ol className="ml-[3.5px] mt-8 space-y-3 border-l border-line pl-5">
+          <ol className="ml-[3.5px] mt-4 space-y-2 border-l border-line pl-5">
             {freemasonry.ram.timeline.map((item) => (
               <li key={item.role} className="relative">
                 <span className="absolute -left-[24.5px] top-1.5 h-2 w-2 rounded-full bg-ink" />
@@ -103,7 +103,7 @@ export default function FreemasonryPage() {
           </ol>
         </section>
 
-        <section className="grid gap-10 md:grid-cols-2">
+        <section className="grid gap-6 md:grid-cols-2">
           {freemasonry.otherOrders.map((order) => (
             <article key={order.title}>
               <h3 className="text-lg font-semibold text-ink">{order.title}</h3>

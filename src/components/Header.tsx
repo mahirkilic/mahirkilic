@@ -12,7 +12,7 @@ export function Header() {
 
   return (
     <header className="relative z-40 border-b border-line/70 bg-bg/90 backdrop-blur-sm">
-      <div className="site-shell flex items-center justify-between gap-6 py-5">
+      <div className="site-shell flex items-center justify-between gap-6 py-3">
         <Link href="/" className="group flex shrink-0 items-center gap-3" onClick={() => setOpen(false)}>
           <Image
             src="/images/logo.png"

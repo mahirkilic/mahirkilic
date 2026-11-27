@@ -14,22 +14,22 @@ export default function PhilanthropyPage() {
         <p className="mt-4">{philanthropy.definition}</p>
       </PageIntro>
 
-      <div className="site-shell space-y-12 py-10 md:py-12">
+      <div className="site-shell space-y-8 py-6 md:py-8">
         {philanthropy.sections.map((section) => (
           <section key={section.id} id={section.id} className="scroll-mt-24">
             {"eyebrow" in section && section.eyebrow ? (
               <p className="text-xs uppercase tracking-[0.2em] text-soft">{section.eyebrow}</p>
             ) : null}
-            <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-ink">
+            <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl tracking-tight md:text-[1.7rem] text-ink">
               {section.title}
             </h2>
-            <div className="mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-muted">
+            <div className="mt-3 max-w-3xl space-y-4 text-base leading-relaxed text-muted">
               {section.paragraphs.map((p) => (
                 <p key={p.slice(0, 40)}>{p}</p>
               ))}
             </div>
             {"bullets" in section && section.bullets ? (
-              <div className="mt-6 max-w-3xl">
+              <div className="mt-3 max-w-3xl">
                 <p className="text-sm font-semibold text-ink">{section.bulletsTitle}</p>
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-muted">
                   {section.bullets.map((b) => (
@@ -39,7 +39,7 @@ export default function PhilanthropyPage() {
               </div>
             ) : null}
             {"link" in section && section.link ? (
-              <p className="mt-6">
+              <p className="mt-3">
                 <a
                   href={section.link.href}
                   target="_blank"
