@@ -72,10 +72,10 @@ export default function FreemasonryPage() {
               <p key={p.slice(0, 40)}>{p}</p>
             ))}
           </div>
-          <ol className="mt-8 space-y-3 border-l border-line pl-5">
+          <ol className="ml-[3.5px] mt-8 space-y-3 border-l border-line pl-5">
             {freemasonry.mark.timeline.map((item) => (
               <li key={item.role} className="relative">
-                <span className="absolute -left-[1.4rem] top-1.5 h-2 w-2 rounded-full bg-ink" />
+                <span className="absolute -left-[24.5px] top-1.5 h-2 w-2 rounded-full bg-ink" />
                 <p className="font-medium text-ink">{item.role}</p>
                 <p className="text-sm text-soft">{item.date}</p>
               </li>
@@ -92,10 +92,10 @@ export default function FreemasonryPage() {
               <p key={p.slice(0, 40)}>{p}</p>
             ))}
           </div>
-          <ol className="mt-8 space-y-3 border-l border-line pl-5">
+          <ol className="ml-[3.5px] mt-8 space-y-3 border-l border-line pl-5">
             {freemasonry.ram.timeline.map((item) => (
               <li key={item.role} className="relative">
-                <span className="absolute -left-[1.4rem] top-1.5 h-2 w-2 rounded-full bg-ink" />
+                <span className="absolute -left-[24.5px] top-1.5 h-2 w-2 rounded-full bg-ink" />
                 <p className="font-medium text-ink">{item.role}</p>
                 <p className="text-sm text-soft">{item.date}</p>
               </li>

@@ -28,7 +28,7 @@ export default function HomePage() {
       </section>
 
       <section className="border-b border-line">
-        <div className="site-shell grid gap-10 py-16 md:grid-cols-[1fr_auto_1fr] md:gap-12 md:py-20">
+        <div className="site-shell grid gap-10 py-10 md:grid-cols-[1fr_auto_1fr] md:gap-12 md:py-12">
           {home.quotes.map((quote, index) => (
             <div key={quote.attribution} className="contents">
               {index === 1 ? <div className="quote-rule hidden md:block" aria-hidden /> : null}
@@ -67,7 +67,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-10 md:py-12">
+      <section className="py-8 md:py-10">
         <div className="site-shell">
           <h2 className="text-xl font-semibold tracking-tight text-ink md:text-2xl">
             {home.breakdownTitle}

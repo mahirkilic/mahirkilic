@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-line bg-paper">
-      <div className="site-shell grid gap-8 py-12 md:grid-cols-[1.2fr_1fr]">
+      <div className="site-shell grid gap-6 py-8 md:grid-cols-2 md:py-10">
         <div>
           <p className="font-[family-name:var(--font-display)] text-2xl tracking-tight text-ink">
             Contact Me
@@ -12,7 +12,7 @@ export function Footer() {
             For enquiries, donations and sponsorship requests.
           </p>
         </div>
-        <div className="space-y-2 text-sm text-muted">
+        <div className="space-y-2 text-sm text-muted md:text-right">
           <p>
             <span className="text-soft">Mob: </span>
             <a className="text-ink hover:underline" href={`tel:${site.phoneTel}`}>

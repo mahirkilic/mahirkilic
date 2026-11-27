@@ -17,8 +17,8 @@ export function Header() {
           <Image
             src="/images/logo.png"
             alt={site.name}
-            width={220}
-            height={38}
+            width={1113}
+            height={203}
             className="h-8 w-auto sm:h-9"
             priority
           />
@@ -26,7 +26,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center border border-line md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center border border-line lg:hidden"
           aria-label="Menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -44,7 +44,7 @@ export function Header() {
             open
               ? "absolute inset-x-0 top-full flex flex-col gap-1 border-b border-line bg-bg px-5 py-4 shadow-sm"
               : "hidden"
-          } md:static md:flex md:flex-row md:items-start md:gap-6 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
+          } lg:static lg:flex lg:flex-row lg:items-start lg:gap-6 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}
         >
           {nav.map((item) => {
             const active =
@@ -52,11 +52,11 @@ export function Header() {
                 ? pathname === "/"
                 : pathname === item.href || ("child" in item && item.child && pathname === item.child.href);
             return (
-              <div key={item.href} className="flex flex-col items-start md:items-center">
+              <div key={item.href} className="flex flex-col items-start lg:items-center">
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className={`text-[0.95rem] tracking-wide transition ${
+                  className={`whitespace-nowrap text-[0.95rem] tracking-wide transition ${
                     active ? "text-ink" : "text-muted hover:text-ink"
                   }`}
                 >
