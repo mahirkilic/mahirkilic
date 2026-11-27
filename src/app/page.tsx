@@ -32,17 +32,32 @@ export default function HomePage() {
           {home.quotes.map((quote, index) => (
             <div key={quote.attribution} className="contents">
               {index === 1 ? <div className="quote-rule hidden md:block" aria-hidden /> : null}
-              <article className={`fade-up ${index === 1 ? "fade-up-delay" : ""} text-center`}>
-                <div className="mx-auto mb-6 h-56 w-44 overflow-hidden md:h-64 md:w-48">
+              {/* On desktop the first quote hugs the left edge of the page
+                  container and the second the right edge, in line with the
+                  logo and the last menu item in the header. */}
+              <article
+                className={`fade-up ${index === 1 ? "fade-up-delay md:text-right" : "md:text-left"} text-center`}
+              >
+                <div
+                  className={`mx-auto mb-6 h-56 w-44 overflow-hidden md:h-64 md:w-48 ${
+                    index === 1 ? "md:mr-0" : "md:ml-0"
+                  }`}
+                >
                   <Image
                     src={quote.portrait}
                     alt={quote.alt}
                     width={377}
                     height={512}
-                    className="h-full w-full object-contain object-bottom"
+                    className={`h-full w-full object-contain object-bottom ${
+                      index === 1 ? "md:object-right-bottom" : "md:object-left-bottom"
+                    }`}
                   />
                 </div>
-                <p className="mx-auto max-w-sm font-[family-name:var(--font-display)] text-[1.05rem] leading-relaxed text-quote md:text-lg">
+                <p
+                  className={`mx-auto max-w-sm font-[family-name:var(--font-display)] ${
+                    index === 1 ? "md:mr-0" : "md:ml-0"
+                  } text-[1.05rem] leading-relaxed text-quote md:text-lg`}
+                >
                   {quote.text}
                 </p>
                 <p className="mt-4 text-sm text-muted">— {quote.attribution}</p>
