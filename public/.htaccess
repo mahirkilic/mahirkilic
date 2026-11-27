@@ -1,0 +1,3 @@
+# Apache settings for the static export on Hostinger.
+ErrorDocument 404 /404.html
+DirectoryIndex index.html

@@ -1,0 +1,40 @@
+# Builds the static site and publishes it to the `hostinger` branch.
+# Hostinger's Git deployment pulls that branch into public_html.
+name: Build and publish to Hostinger
+
+on:
+  push:
+    branches: [claude/laughing-cerf-o1gw6f]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Publish out/ to the hostinger branch
+        run: |
+          cd out
+          touch .nojekyll
+          git init -q -b hostinger
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Build ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" hostinger
